@@ -8,7 +8,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
         <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="{% url 'user_shop:allProdCat' %}">Home</a>
         </li>
         <li class="nav-item dropdown {% if 'user_shop' in request.path %} active {% endif %}">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
@@ -23,8 +23,9 @@
         {% endif %}
         <li>
             <form class="d-flex" action="{% url 'user_shop:filter_price' %}" method="get">
-              <input type="text" name="min_price" maxlength="4" size="3" placeholder="Min Price" required> to <input type="text" name="max_price" maxlength="4" size="3" placeholder="Max Price" required>
-              <input type="submit" value="Go">
+              <label class="nav-link" >PRICE</label>
+              <input type="text" name="min_price" maxlength="4" size="5" placeholder="Min Price" style="height:40px;" required> <p class="nav-link">to</p> <input type="text" name="max_price" maxlength="8" size="5" placeholder="Max Price" style="height:40px;" required>
+              <input class="btn btn-outline-success" type="submit" value="Go" style="height:40px; margin-left: 10px;" >
             </form>
         </li>
       </ul>

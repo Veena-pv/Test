@@ -37,6 +37,8 @@ def filter_price(request):
     if 'min_price' in request.GET:
         filter_price1 = request.GET.get('min_price')
         filter_price2 = request.GET.get('max_price')
+        print(filter_price1)
+        print(filter_price2)
         if filter_price1 =='': filter_price1=0
         my_products = Product.objects.filter(price__range=(filter_price1, filter_price2))
         context = {"products": my_products}
